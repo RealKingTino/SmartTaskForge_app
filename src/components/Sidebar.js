@@ -13,19 +13,22 @@ export default function Sidebar() {
     const [boardData, setBoardData] = useState(blankBoard);
     const [collapsed, setCollapsed] = useState(false);
     const [showpop, setShowpop] = useState(false);
-    const {allBoards,setAllBoards} = useContext(BoardContext);
-    const setActiveBoard = (i) => {
-        let newBoard = {...allBoards}
+    const { allBoards, setAllBoards } = useContext( BoardContext );
+    
+    const setActiveBoard = ( i ) =>
+    {
+        let newBoard = { ...allBoards }
         newBoard.active = i;
-        setAllBoards(newBoard);
-    }
-    const addBoard = () => {
-        let newBoard = {...allBoards};
-        newBoard.boards.push(boardData);
-        setAllBoards(newBoard);
-        setBoardData(blankBoard);
-        setShowpop(!showpop);
-    }
+        setAllBoards( newBoard );
+    };
+    const addBoard = () =>
+    {
+        let newBoard = { ...allBoards };
+        newBoard.boards.push( boardData );
+        setAllBoards( newBoard );
+        setBoardData( blankBoard );
+        setShowpop( !showpop );
+    };
     return (
         <div className={`bg-[#121417] h-[calc(100vh-3rem)] border-r border-r-[#9fadbc29] transition-all linear duration-500 flex-shrink-0 ${collapsed ? 'w-[42px]': 'w-[280px]'}`} >
           {collapsed && <div className='p-2'>
@@ -34,6 +37,7 @@ export default function Sidebar() {
               </button>
           </div>}
             {!collapsed && <div>
+                <p>{JSON.stringify(allBoards)}</p>
             <div className='workspace p-3 flex justify-between border-b border-b-[#9fadbc29]'>
               <h4>Remote Dev's Workspace</h4>
                <button onClick={() => setCollapsed(!collapsed)} className='hover:bg-slate-600 rounded-sm p-1'>
@@ -72,7 +76,7 @@ export default function Sidebar() {
             </div>
             <ul>
                 { allBoards.boards && allBoards.boards.map((x,i) => {
-                    return <li>
+                    return <li key={i}>
                     <button onClick={() => setActiveBoard(i)} className='px-4 py-2 w-full text-sm flex justify-start align-baseline hover:bg-gray-500'>
                         <span className='w-6 h-max rounded-sm mr-2' style={{backgroundColor:`${x.bgcolor}`}}>&nbsp;</span>
                         <span>{x.name}</span>
