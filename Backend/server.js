@@ -5,6 +5,8 @@ require('dotenv').config();
 const userRoutes = require('./routes/userRoutes.js');
 const boardRoutes = require('./Backend/routes/boardRoutes.js');
 const taskRoutes = require('./routes/taskRoutes.js');
+const labelRoutes = require('./routes/labelRoutes');
+const listRoutes = require('./routes/listRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,8 @@ console.log("MONGO_URI:", process.env.MONGO_URI);
 app.use('/api/users', userRoutes);
 app.use('/api/boards', boardRoutes);
 app.use('/api/tasks', taskRoutes);
+app.use('/api/labels', labelRoutes);
+app.use('/api/lists', listRoutes);
 
 const start = async () => {
   try {
