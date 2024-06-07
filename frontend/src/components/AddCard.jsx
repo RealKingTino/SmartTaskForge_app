@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { X, Plus } from 'react-feather';
+import { Plus, X } from 'react-feather';
 
-const CardAdd = (props) => {
+const AddCard = (props) => {
 
     const [card,setCard] = useState('');
     const [show,setShow] = useState(false);
@@ -42,4 +42,4 @@ const CardAdd = (props) => {
     );
 }
 
-export default CardAdd;
+export default AddCard;

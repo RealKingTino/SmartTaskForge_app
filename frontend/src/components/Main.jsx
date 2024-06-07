@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
-import { MoreHorizontal, UserPlus, Edit2 } from 'react-feather'
-import CardAdd from './CardAdd';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { Edit2, MoreHorizontal, UserPlus } from 'react-feather';
 import { BoardContext } from '../context/BoardContext';
-import { DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd';
-import AddList from './AddList';
 import Utils from '../utils/Utils';
+import AddCard from './AddCard';
+import AddList from './AddList';
 
 const Main = () => {
 
@@ -102,7 +103,7 @@ const Main = () => {
                         
                         
 
-                        <CardAdd getcard={(e)=>cardData(e,ind)}></CardAdd>
+                        <AddCard getcard={(e)=>cardData(e,ind)}></AddCard>
                     </div>
                 </div>
                 })
