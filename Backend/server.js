@@ -1,13 +1,16 @@
 // server.js
+require('dotenv').config();
+console.log('Environment Variables:', process.env);
+
 const express = require('express');
 const connectDB = require('./db/connectdb');
-require('dotenv').config();
 
 const userRoutes = require('./routes/userRoutes');
 const boardRoutes = require('./routes/boardRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const labelRoutes = require('./routes/labelRoutes');
 const listRoutes = require('./routes/listRoutes');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
