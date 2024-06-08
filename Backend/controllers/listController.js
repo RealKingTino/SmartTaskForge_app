@@ -1,4 +1,4 @@
-const List = require('../models/List');
+const List = require('../models/Lists.js');
 
 // Create a new list
 exports.createList = async (req, res) => {

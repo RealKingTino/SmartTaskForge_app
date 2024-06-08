@@ -1,4 +1,4 @@
-const Board = require('../models/Board');
+const Board = require('../models/Boards.js');
 
 exports.createBoard = async (req, res) => {
   const { name, description } = req.body;

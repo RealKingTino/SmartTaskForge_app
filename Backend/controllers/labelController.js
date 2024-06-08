@@ -1,4 +1,4 @@
-const Label = require('../models/Label');
+const Label = require('../models/Labels.js');
 
 // Create a new label
 exports.createLabel = async (req, res) => {
