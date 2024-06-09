@@ -10,10 +10,12 @@ const boardRoutes = require('./routes/boardRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const labelRoutes = require('./routes/labelRoutes');
 const listRoutes = require('./routes/listRoutes');
+const cors = require('cors');
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.use(cors());
 
 // Middleware
 app.use(express.json()); // For parsing application/json
